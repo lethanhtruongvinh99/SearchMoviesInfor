@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="US-en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        div.scrollmenu {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+       div.scrollmenu1{
+           width: 100%;
+           height: 200px;
+           overflow: auto;
+           white-space: nowrap;
+       }
+    </style>
+</head>
+
+<body onload="getTrending();">
+    <div class="container">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row-md-12">
+            <nav class="navbar fixed-top navbar-light bg-light" style="margin-left: 10%;margin-right: 10%;" id="HomePage">
+                <a class="navbar-brand" onclick="getTrending();" href="#topHP" cursor:pointer>HomePage</a>
+                <form class="form-inline" onsubmit="event.preventDefault();getSearch()" action="#">
+                    <input class="form-control mr-sm-2" id="inputSearch" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <select class="form-control form-control-md mr-sm-1" id="search-mode">
+                        <option value="volvo">Movie</option>
+                        <option value="volvo">Actor</option>
+                    </select>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+
+        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+        <div class="row-md-12" id="topHP">
+            <div class="col col-md-12 justify-content-center" style="padding-top: 60px;">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status" id="spinner">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="container" id="cardMovie">
+
+                </div>
+
+                <div class="container" id="MovieDetail">
+
+                </div>
+
+                <div class="container" id="PersonDetail">
+
+                </div>
+
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="ulMovie">
+                </ul>
+            </nav>
+        </div>
+        <div class="row-md-12">
+            <div class="col-12">
+                <p>Bottom</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="process.js">
+    </script>
+</body>
+
+<footer>
+</footer>
+
+</html>
